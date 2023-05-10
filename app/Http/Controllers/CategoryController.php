@@ -59,23 +59,23 @@ public function index()
     {
         // return $id;
         // check if id exist in database
-        $post=Category::find($id);
-        if(!$post){
-            abort(404);
-        }
-        return view('posts.show',['post'=>$post]);
+        // $post=Category::find($id);
+        // if(!$post){
+        //     abort(404);
+        // }
+        // return view('posts.show',['post'=>$post]);
     }
 
 
-    public function edit($id)
+    public function edit($category)
     {
-        // return $id;
+        // return $category;
          // check if id exist in database than edit
-         $post=Category::find($id);
-         if(!$post){
+         $category=Category::find($category);
+         if(!$category){
             abort(404);
          }
-        return view('posts.edit',compact('post'));
+        return view('admin.category.edit_categories',compact('category'));
 
     }
 
@@ -84,20 +84,18 @@ public function index()
     {
         // return 'your updated id is '.$id;
 
-        $post=Category::find($id);
-        if(!$post){
+        $category=Category::find($id);
+        if(!$category){
             abort(404);
         }
       // instance '$post' for update, 1 way of writing  $post->update($request)->all search for correct syntax
-        $post->update([
+        $category->update([
             // request se title ki value coming
-            'title' => $request->title,
-            'description' => $request->description,
-            'is_publish' => $request->is_publish
+            'category_title' => $request->input('cat_title')
 
         ]);
         // redirect to same page
-        return to_route('posts.index');
+        return to_route('categories.index');
 
     }
 

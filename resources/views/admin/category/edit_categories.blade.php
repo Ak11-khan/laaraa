@@ -9,8 +9,8 @@
  <!-- bootstrap css link -->
  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
  <!-- font awesome  -->
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /> --}}
-
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+ --}}
 
 @if ($errors->any())
     <div class="alert alert-danger">
@@ -30,9 +30,10 @@
 <!-- <title>Insert Categories</title> -->
 @extends('layouts.adminlayout')
  @section('content')
-<h2 class="text-center">Insert Categories</h2>
-<form action="{{ route('categories.store') }}" method="post" class="mb-2" >
+<h2 class="text-center">Edit Categories</h2>
+<form action="{{ route('categories.update',$category->id) }}" method="post" class="mb-2" >
     @csrf
+    @method('PUT')
 <div class="input-group w-90 mb-2 " >
   <span class="input-group-text bg-info" id="basic-addon1"><i class="fa-solid fa-receipt"></i></span>
   <input type="text" class="form-control" name="cat_title" placeholder="Insert Categories" aria-label="Username" aria-describedby="basic-addon1">

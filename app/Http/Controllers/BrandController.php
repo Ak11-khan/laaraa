@@ -57,11 +57,11 @@ class BrandController extends Controller
     {
         // return $id;
         // check if id exist in database
-        // $post=Brand::find($id);
+        // $brand=Brand::find($id);
         // if(!$post){
         //     abort(404);
         // }
-        // return view('posts.show',['post'=>$post]);
+        // return view('posts.show',['brand'=>$brand]);
     }
 
 
@@ -69,11 +69,12 @@ class BrandController extends Controller
     {
         // return $id;
          // check if id exist in database than edit
-        //  $post=Brand::find($id);
-        //  if(!$post){
-        //     abort(404);
-        //  }
-        // return view('posts.edit',compact('post'));
+         $brand=Brand::find($id);
+         if(!$brand){
+            abort(404);
+         }
+        return view('admin.brands.edit_brands',compact('brand'));
+
 
     }
 
@@ -81,21 +82,21 @@ class BrandController extends Controller
     public function update(Request $request, $id)
     {
         // return 'your updated id is '.$id;
-
-        // $post=Brand::find($id);
-        // if(!$post){
-        //     abort(404);
-        // }
+        //taking about only 1 brand thats why variable is $brand
+        // $brand=Brand::find($id);
+        // but for now $brands
+        $brand=Brand::find($id);
+        if(!$brand){
+            abort(404);
+        }
       // instance '$post' for update, 1 way of writing  $post->update($request)->all search for correct syntax
-        // $post->update([
+        $brand->update([
             // request se title ki value coming
-            // 'title' => $request->title,
-            // 'description' => $request->description,
-            // 'is_publish' => $request->is_publish
+            'brand_title' => $request->input('brand_title')
 
-        // ]);
+        ]);
         // redirect to same page
-        // return to_route('posts.index');
+        return to_route('brands.index');
 
     }
 

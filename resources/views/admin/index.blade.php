@@ -14,7 +14,7 @@
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <style>
-  body {
+ body {
   font-family: Arial;
   padding: 10px;
   background: #e7d8c9;
@@ -157,7 +157,11 @@ td {
 <div class="row">
   <div class="col md-12 ">
    <div class="p-3">
-    <a href="#"><img src='./public.storage.image/Apple_cut_web.pn' alt="" class="admin_image"></a>
+    <a href="#">
+        <img src="{{ asset('storage/image/products/australia-beautiful-places-sydney-harbour.jpeg') }}" alt="" class="admin_image">
+        {{-- <td> <img src="{{ asset('storage/image/products/'.$product->product_image1) }}" class="image_pro" alt="{{ $product->p --}}
+    </a>
+
     <p class="admin">Admin</p>
    </div>
    <!-- button*10>a.nav-link.text-light.bg-info.my-1 -->
@@ -180,6 +184,8 @@ td {
     <button><a href="{{ route('categories.index') }}" class="nav-link ">View categories</a></button>
     <button><a href="{{ route('brands.create') }}" class="nav-link ">Insert Brand</a></button>
     <button><a href="{{ route('brands.index') }}" class="nav-link ">View Brand</a></button>
+    <button><a href="{{ route('users.index') }}" class="nav-link ">List users</a></button>
+    <button><a href="{{ route('users.create') }}" class="nav-link ">List users</a></button>
     {{-- <button><a href="index.php?list_orders" class="nav-link ">All Orders</a></button>
     <button><a href="index.php?list_payments" class="nav-link ">All payments</a></button>
     <button><a href="index.php?list_users" class="nav-link ">List users</a></button>

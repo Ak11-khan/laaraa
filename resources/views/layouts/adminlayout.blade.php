@@ -1,3 +1,6 @@
+
+{{-- @extends('admin.products.view_products') --}}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -129,3 +132,85 @@ td {
 </style>
 </head>
 <body>
+<!-- navbar -->
+<div class="container" >
+
+  <!-- first child -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <img src="{{ asset('storage/image/products/login-box-username-admin-password-internet-browser-computer-screen-44209080.jpeg') }}" alt="" class="logo">
+      <nav class="navbar-secondary" >
+        <ul class="nav">
+          <li class="nav-item">
+           <a href="#" class="">Welcome Admin</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </nav>
+</div>
+  <!-- second child -->
+  <div class="sub_heading">
+       <h3>Manage Items</h3>
+</div>
+
+<!-- third child -->
+<div class="row">
+  <div class="col md-12 ">
+   <div class="p-3">
+    <a href="#"><img src='{{ asset('storage/image/products/australia-beautiful-places-sydney-harbour.jpeg') }}' alt="" class="admin_image"></a>
+    <p class="admin">Admin</p>
+   </div>
+   <!-- button*10>a.nav-link.text-light.bg-info.my-1 -->
+   <div class="buttoncss text-center">
+
+    {{-- products index  --}}
+
+        {{-- products index coming from name of web.php route --}}
+        {{-- eg:Route::get('/products/create', [ProductController::class, 'create'])->name('product.create'); --}}
+   <button><a href="{{ route('products.index') }}" class="nav-link ">View Product</a></button>
+
+
+    {{-- products create --}}
+    <button><a href="{{ route('products.create') }}" class="nav-link ">Insert Product</a></button>
+
+
+
+    <!-- get variable index.php?insert_categories -->
+    <button><a href="{{ route('categories.create') }}" class="nav-link ">Insert categories</a></button>
+    <button><a href="{{ route('categories.index') }}" class="nav-link ">View categories</a></button>
+    <button><a href="{{ route('brands.create') }}" class="nav-link ">Insert Brand</a></button>
+    <button><a href="{{ route('brands.index') }}" class="nav-link ">View Brand</a></button>
+    <button><a href="{{ route('users.index') }}" class="nav-link ">List users</a></button>
+    <button><a href="{{ route('users.create') }}" class="nav-link ">User Registration</a></button>
+    {{-- <button><a href="index.php?list_orders" class="nav-link ">All Orders</a></button>
+    <button><a href="index.php?list_payments" class="nav-link ">All payments</a></button>
+    <button><a href="index.php?list_users" class="nav-link ">List users</a></button>
+    <button><a href="index.php?front_page" class="nav-link ">Front Page</a></button>
+    <button><a href="../users_area/logout.php" class="nav-link ">Logout</a></button>
+   </div> --}}
+  </div>
+</div>
+</div>
+
+<!-- Fourth child -->
+
+<div class="container my-3">
+
+
+</div>
+
+<br>
+<br>
+@yield('content')
+
+<!-- last child -->
+
+
+
+ <!-- bootstrap js  link  -->
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+
+
+</html>

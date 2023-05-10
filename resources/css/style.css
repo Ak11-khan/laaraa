@@ -114,7 +114,7 @@ display: flex;
   margin-top: 1rem;
 } */
 
-.btn {
+/* .btn {
     margin-top: 0.5rem;
     border-radius: 0.5rem;
     text-transform: uppercase;
@@ -122,10 +122,10 @@ display: flex;
     font-size: 0.875rem;
     font-weight: bold;
     padding: 0.5rem 1rem;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease; */
     /* text-decoration: none; */
 
-  }
+  /* }
 
   .btn-info {
     background-color: #007bff;
@@ -147,7 +147,7 @@ display: flex;
   .btn-secondary:hover {
     background-color: #5a6268;
     border-color: #545b62;
-  }
+  } */
   /* @media screen and (max-width: 768px) {
     .product-card {
     width: 48%;
@@ -161,3 +161,100 @@ display: flex;
       width: 100%;
     }
     } */
+    body {
+        font-family: Arial;
+        padding: 10px;
+        background: #e7d8c9;
+      }
+              /* Form container */
+      .container-fluid {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        /* padding: 0 15px; */
+
+      }
+
+      /* Form title */
+      h2.text-center {
+        font-size: 2rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        color:#e6beae;
+      }
+
+      /* Form wrapper */
+      form {
+        background-color: #eee4e1;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      }
+      /* div style */
+      .form-outline{
+        margin-bottom:16px ;
+      }
+      /* Form input labels */
+      .form-label{
+        font-size: 1.1rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        background-clip: content-box;
+        -webkit-background-clip: content-box;
+        -moz-background-clip: content-box;
+        background: -webkit-linear-gradient(45deg, #b2967d, #e6beae);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+      }
+
+      /* Form input fields */
+      .form-control {
+        display: block;
+        width: 100%;
+        padding:5px 10px;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        transition: border-color 0.3s;
+      }
+
+      .form-control:focus {
+        border-color: #6c757d;
+      }
+
+      /* Submit button */
+      .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 1rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #fff;
+        background-color: #e6beae;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 9px;
+      }
+
+      .btn:hover {
+        background-color: #e6beae;
+      }
+
+      /* Small text */
+      .small {
+        font-size: 0.8rem;
+        color: #6c757d;
+      }
+
+      /* Link */
+      .text-danger {
+        color: brown;
+        text-decoration: none;
+      }
+
+      .text-danger:hover {
+        text-decoration: underline;
+      }
+
