@@ -107,23 +107,76 @@ body {
         text-decoration: underline;
       }
 
+      .custom-alert {
 
+color: #0a7434;
+/* Add any additional styling as needed */
+}
 </style>
 
 </head>
+
 <body>
-  <div class="container-fluid">
+
+
+
+    <div class="container-fluid">
     <!-- my for top bottom margin no right and left -->
 
   @extends('layouts.adminlayout')
  @section('content')
+
+
+  {{-- session set --}}
+  {{-- @if (session('success'))
+  <div class="alert alert-success">
+      {{ session('success') }}
+  </div>
+@endif --}}
+
+
  <h2 class="text-center my-3">
     New User Registration
   </h2>
+
+
   <div class="row d-flex align-items-center justify-content-center">
     <div class="col-lg-12 col-xl-6">
   <form action="{{ route('users.store') }}" method="post" class="" enctype="multipart/form-data">
     @csrf
+    <div class="form-outline ">
+
+
+        {{-- @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+    </div> --}}
+
+    @if (\Session::has('error'))
+    <div class="alert alert-danger">
+        <ul>
+            <li>{!! \Session::get('error') !!}</li>
+        </ul>
+    </div>
+@endif
+
+
+{{-- @if(session()->has('error'))
+    <div class="alert alert-danger">
+        {{ session('error') }}
+    </div>
+@endif --}}
+    {{-- <pre>
+        @php
+            print_r($errors->all());
+        @endphp
+    </pre> --}}
   <div class="form-outline mb-4">
     <!-- username -->
 
@@ -163,6 +216,9 @@ body {
   <input type="submit" name="user_register" class="btn btn-info mb-3 px-3" value ="Register">
   <p class="small fw-bold mt-2 pt-1" >Already have an account ? <a href="user_login.php" class="text-danger"> Login</a></p>
    </div>
+
+
+
   </form>
   </div>
   </div>

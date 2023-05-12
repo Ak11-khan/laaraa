@@ -3,17 +3,22 @@
 @extends('layouts.adminlayout')
  @section('content')
  <div class="container">
+
+    {{-- session set --}}
  @if(session()->has('success'))
     <div class="alert alert-success">
         {{ session('success') }}
     </div>
 @endif
-@if(session('error'))
+
+@if(session()->has('error'))
     <div class="alert alert-danger">
         {{ session('error') }}
     </div>
 @endif
+{{--  --}}
 <h3 class="text-center text-success">All users</h3>
+
 @if(count($users)>0)
 <table class="center">
 

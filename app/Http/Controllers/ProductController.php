@@ -6,6 +6,7 @@ use App\Models\Product;
 use App\Models\Category;
 use App\Models\Brand;
 use Illuminate\Http\Request;
+use \Illuminate\Support\Facades\Session;
 
 class ProductController extends Controller
 {
@@ -139,8 +140,8 @@ class ProductController extends Controller
         // ]);
         // img method 1
         // $path=$request->file('product_images1')->storeAs('public/images/product');
-//    $request->session()->flash('alert-success', 'post saved');
 
+   session()->flash('success', 'Product inserted successfully!');
 
          return redirect()->route('products.index');
 

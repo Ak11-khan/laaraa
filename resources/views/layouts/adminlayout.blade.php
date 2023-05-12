@@ -196,7 +196,11 @@ td {
 <!-- Fourth child -->
 
 <div class="container my-3">
-
+    @if(session()->has('error'))
+    <div class="alert alert-danger">
+        {{ session('error') }}
+    </div>
+@endif
 
 </div>
 

@@ -11,7 +11,13 @@
         <link rel="stylesheet" href="{{ asset('assets/parsley.css') }}">
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
+<style>
+    .alert .alert-success{
+        color: green;
+        margin: auto;
 
+    }
+    </style>
 <body>
   <div class="col-md-6 offset-3 mt-5">
             <h3 class="text-center">Create Post</h3>

@@ -19,10 +19,23 @@
       object-fit: cover; /* Scale and crop the image to fit */
       border: 1px solid #ccc; /* Add a border */
     }
+
+    .custom-alert {
+
+    color: #0a7434;
+    /* Add any additional styling as needed */
+}
   </style>
 <h3 class="text_center text_success">All Products</h3>
 @extends('layouts.adminlayout')
  @section('content')
+
+ @if(session()->has('success'))
+    <div class="alert custom-alert">
+        {{ session('success') }}
+    </div>
+@endif
+
 <table class="center">
 
  <thead class="bg-info">
